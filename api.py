@@ -13,7 +13,7 @@ st.markdown(
 # Set your API key
 api_key="sk-iAym-FFx6dyhI2TBUnhlki4vecSbxKLsxdzrMAnxWzT3BlbkFJH2-hop5WVvs3-X-szYFJLP1JQYdcJbSC2IJXisnLcA"  # Replace with your API key
 client=OpenAI(api_key=api_key)
-
+assistant_id="asst_sWu0pTI8gtxF1kMcdba7J1hZ"
 
 
 # Streamlit app title
@@ -28,11 +28,11 @@ if 'messages' not in st.session_state:
 
 
 # Function to call OpenAI's API with assistant ID
-def get_chatgpt_response_with_assistant_id(prompt):
+def get_chatgpt_response_with_assistant_id(prompt,assistant_id):
     response = client.chat.completions.create(
         model="gpt-4",  # Specify the correct model
         messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "system", "content":f"You are an assistant with ID:{assistant_id}"},
             {"role": "user", "content": prompt},
         ]
     )
@@ -48,7 +48,7 @@ if prompt := st.chat_input("Ask a question"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Get response from ChatGPT with assistant ID
-    response = get_chatgpt_response_with_assistant_id(prompt)
+    response = get_chatgpt_response_with_assistant_id(prompt,assistant_id)
 
     # Add assistant response to history
     st.session_state.messages.append({"role": "assistant", "content": response})
