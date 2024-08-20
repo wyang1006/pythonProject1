@@ -1,5 +1,5 @@
 import streamlit as st
-import openai
+from openai import OpenAI
 
 st.title("This is a test")
 
@@ -12,7 +12,7 @@ st.markdown(
 )
 # Set your API key
 api_key="sk-iAym-FFx6dyhI2TBUnhlki4vecSbxKLsxdzrMAnxWzT3BlbkFJH2-hop5WVvs3-X-szYFJLP1JQYdcJbSC2IJXisnLcA"  # Replace with your API key
-openai.api_key=api_key
+client=OpenAI(api_key=api_key)
 
 
 
@@ -30,7 +30,7 @@ if 'messages' not in st.session_state:
 # Function to call OpenAI's API with assistant ID
 def get_chatgpt_response_with_assistant_id(prompt):
     try:
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4",  # Specify the correct model
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
