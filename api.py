@@ -12,7 +12,7 @@ st.markdown(
 )
 # Set your API key
 api_key="sk-iAym-FFx6dyhI2TBUnhlki4vecSbxKLsxdzrMAnxWzT3BlbkFJH2-hop5WVvs3-X-szYFJLP1JQYdcJbSC2IJXisnLcA"  # Replace with your API key
-client=OpenAI(api_key=api_key,)
+client=OpenAI(api_key=api_key)
 
 
 
@@ -29,16 +29,24 @@ if 'messages' not in st.session_state:
 
 # Function to call OpenAI's API with assistant ID
 def get_chatgpt_response_with_assistant_id(prompt):
-    response = client.chat.completions.create(
-        model="gpt-4",# Specify the model you are using
-        messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": prompt},
-        ],
-          # Pass the assistant ID here
-    )
-    return response['choices'][0]['message']['content']
+    try:
+        response = client.ChatCompletion.create(
+            model="gpt-4",  # Specify the correct model
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt},
+            ]
+        )
+        # Ensure the response contains the expected keys
+        if 'choices' in response and len(response['choices']) > 0:
+            return response['choices'][0]['message']['content']
+        else:
+            return "Unexpected API response format."
 
+    except Exception as e:
+        # Log the error and return a friendly message
+        st.error(f"An error occurred: {e}")
+        return "Sorry, I couldn't process your request."
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
