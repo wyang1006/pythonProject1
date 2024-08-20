@@ -52,7 +52,7 @@ if prompt := st.chat_input("Ask a question"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Get response from ChatGPT with assistant ID
-    response = get_chatgpt_response_with_assistant_id(prompt, assistant_id)
+    response = get_chatgpt_response_with_assistant_id(prompt)
 
     # Add assistant response to history
     st.session_state.messages.append({"role": "assistant", "content": response})
