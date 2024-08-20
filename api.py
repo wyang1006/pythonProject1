@@ -29,7 +29,7 @@ if 'messages' not in st.session_state:
 
 # Function to call OpenAI's API with assistant ID
 def get_chatgpt_response_with_assistant_id(prompt):
-    response = client.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-4",# Specify the model you are using
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
