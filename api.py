@@ -36,7 +36,7 @@ def get_chatgpt_response_with_assistant_id(prompt):
             {"role": "user", "content": prompt},
         ]
     )
-
+    return response.choices[0].message.content
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
