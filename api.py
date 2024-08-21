@@ -17,7 +17,7 @@ assistant_id="asst_sWu0pTI8gtxF1kMcdba7J1hZ"
 
 
 # Streamlit app title
-st.title("ChatGPT Assistant in Streamlit")
+st.title("FAF FLOW AI-Assisted Chat")
 
 # Initial message
 st.markdown("Welcome to the ChatGPT Assistant! Ask me anything.")
@@ -28,11 +28,11 @@ if 'messages' not in st.session_state:
 
 
 # Function to call OpenAI's API with assistant ID
-def get_chatgpt_response_with_assistant_id(prompt,assistant_id):
+def get_chatgpt_response_with_assistant_id(prompt):
     response = client.chat.completions.create(
         model="gpt-4",  # Specify the correct model
         messages=[
-            {"role": "system", "content":f"You are an assistant with ID:{assistant_id}"},
+            {"role": "system", "content":"You are a data analyst"},
             {"role": "user", "content": prompt},
         ]
     )
@@ -48,7 +48,7 @@ if prompt := st.chat_input("Ask a question"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Get response from ChatGPT with assistant ID
-    response = get_chatgpt_response_with_assistant_id(prompt,assistant_id)
+    response = get_chatgpt_response_with_assistant_id(prompt)
 
     # Add assistant response to history
     st.session_state.messages.append({"role": "assistant", "content": response})
