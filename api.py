@@ -21,7 +21,7 @@ assistant_id="asst_2CNArz6z3k7YC6Y8x3QYrewi"
 st.title("FAF FLOW AI-Assisted Chat")
 
 # Initial message
-st.markdown("Welcome to the ChatGPT Assistant! Ask me anything.")
+st.markdown("Welcome to the FAF Freight Flow AI Assistant! Ask me anything.")
 
 # Store chat history
 if 'messages' not in st.session_state:
