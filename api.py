@@ -2,7 +2,7 @@ import streamlit as st
 from openai import OpenAI
 from pyexpat.errors import messages
 
-st.title("This is a test")
+st.title("FAF Flow Dashboard")
 
 embed_url="https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
 st.markdown(
