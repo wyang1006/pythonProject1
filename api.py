@@ -43,7 +43,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Text input for user query
-if prompt := st.chat_input("Ask a question"):
+if prompt := st.chat_input("Ask a question about the data"):
     # Add user message to history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
