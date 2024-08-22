@@ -1,5 +1,6 @@
 import streamlit as st
 from openai import OpenAI
+from pyexpat.errors import messages
 
 st.title("This is a test")
 
@@ -13,7 +14,7 @@ st.markdown(
 # Set your API key
 api_key="sk-iAym-FFx6dyhI2TBUnhlki4vecSbxKLsxdzrMAnxWzT3BlbkFJH2-hop5WVvs3-X-szYFJLP1JQYdcJbSC2IJXisnLcA"  # Replace with your API key
 client=OpenAI(api_key=api_key)
-assistant_id="asst_sWu0pTI8gtxF1kMcdba7J1hZ"
+assistant_id="asst_2CNArz6z3k7YC6Y8x3QYrewi"
 
 
 # Streamlit app title
@@ -28,15 +29,33 @@ if 'messages' not in st.session_state:
 
 
 # Function to call OpenAI's API with assistant ID
-def get_chatgpt_response_with_assistant_id(prompt):
-    response = client.chat.completions.create(
-        model="gpt-4",  # Specify the correct model
-        messages=[
-            {"role": "system", "content":"You are a data analyst"},
-            {"role": "user", "content": prompt},
-        ]
+def  chat_manager(prompt):
+    thread=client.beta.threads.create()
+    message = client.beta.threads.messages.create(
+        thread_id= thread.id,
+        role= "user",
+        content= prompt
     )
-    return response.choices[0].message.content
+    run = client.beta.threads.runs.create_and_poll(
+        thread_id= thread.id,
+        assistant_id= assistant_id,
+        instructions="Please address the users as 'Dear User'."
+    )
+    messages=client.beta.threads.messages.list(thread_id=thread.id)
+    last_message=messages.data[0]
+    response=last_message.content[0].text.value
+
+    return response
+
+# def get_chatgpt_response_with_assistant_id(prompt):
+#     response = client.chat.completions.create(
+#         model="gpt-4",  # Specify the correct model
+#         messages=[
+#             {"role": "system", "content":"You are a data analyst"},
+#             {"role": "user", "content": prompt},
+#         ]
+#     )
+#     return response.choices[0].message.content
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -48,7 +67,7 @@ if prompt := st.chat_input("Ask a question about the data"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Get response from ChatGPT with assistant ID
-    response = get_chatgpt_response_with_assistant_id(prompt)
+    response = chat_manager(prompt)
 
     # Add assistant response to history
     st.session_state.messages.append({"role": "assistant", "content": response})
