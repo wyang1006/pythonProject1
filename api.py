@@ -23,9 +23,9 @@ st.title("FAF FLOW AI-Assisted Chat")
 # Initial message
 st.markdown("Welcome to the FAF Freight Flow AI Assistant! Ask me anything.")
 
-# Store chat history
-if 'messages' not in st.session_state:
-    st.session_state.messages = []
+# # Store chat history
+# if 'messages' not in st.session_state:
+#     st.session_state.messages = []
 
 
 # Function to call OpenAI's API with assistant ID
@@ -57,6 +57,11 @@ def  chat_manager(prompt):
 #     )
 #     return response.choices[0].message.content
 # Display chat messages from history on app rerun
+
+# Store chat history
+if 'messages' not in st.session_state:
+    st.session_state.messages = []
+
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
