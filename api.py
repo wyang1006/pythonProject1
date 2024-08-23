@@ -70,7 +70,7 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("Ask a question about the data"):
     # Add user message to history
     st.session_state.messages.append({"role": "user", "content": prompt})
-
+    #display user's input
     with st.chat_message("user"):
         st.markdown(prompt)
     # Get response from ChatGPT with assistant ID
