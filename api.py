@@ -4,7 +4,7 @@ from openai import OpenAI
 
 st.title("FAF Flow Dashboard")
 
-embed_url="https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+embed_url="https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9&rs:Fit=True"
 st.markdown(
     f"""
     <iframe width="1000" height="600" src="{embed_url}" frameborder="0" allowFullScreen="true"></iframe>
@@ -23,9 +23,7 @@ st.title("FAF FLOW AI-Assisted Chat")
 # Initial message
 st.markdown("Welcome to the FAF Freight Flow AI Assistant! Ask me anything.")
 
-# # Store chat history
-# if 'messages' not in st.session_state:
-#     st.session_state.messages = []
+
 
 
 # Function to call OpenAI's API with assistant ID
@@ -47,16 +45,7 @@ def  chat_manager(prompt):
 
     return response
 
-# def get_chatgpt_response_with_assistant_id(prompt):
-#     response = client.chat.completions.create(
-#         model="gpt-4",  # Specify the correct model
-#         messages=[
-#             {"role": "system", "content":"You are a data analyst"},
-#             {"role": "user", "content": prompt},
-#         ]
-#     )
-#     return response.choices[0].message.content
-# Display chat messages from history on app rerun
+
 
 # Store chat history
 if 'messages' not in st.session_state:
