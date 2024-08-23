@@ -4,10 +4,28 @@ from openai import OpenAI
 
 st.title("FAF Flow Dashboard")
 
-embed_url="https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9&rs:Fit=True"
+embed_url="https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
 st.markdown(
     f"""
-    <iframe width="1000" height="600" src="{embed_url}" frameborder="0" allowFullScreen="true"></iframe>
+    <style>
+    .iframe-container {{
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+    }}
+    .iframe-container iframe {{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }}
+    </style>
+    <div class="iframe-container">
+        <iframe src="{embed_url}" allowFullScreen="true"></iframe>
+    </div>
     """,
     unsafe_allow_html=True
 )
