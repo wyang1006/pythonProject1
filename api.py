@@ -11,7 +11,7 @@ st.markdown(
     .iframe-container {{
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        padding-bottom: 60%;/* 16:9 aspect ratio */
         height: 0;
     }}
     .iframe-container iframe {{
