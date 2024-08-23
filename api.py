@@ -62,9 +62,9 @@ def  chat_manager(prompt):
 if 'messages' not in st.session_state:
     st.session_state.messages = []
 
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+# for message in st.session_state.messages:
+#     with st.chat_message(message["role"]):
+#         st.markdown(message["content"])
 
 # Text input for user query
 if prompt := st.chat_input("Ask a question about the data"):
