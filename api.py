@@ -137,3 +137,12 @@ if prompt := st.chat_input("Ask a question about the data"):
 
     # Prepare the full conversation history for the API request
     conversation_history = st.session_state.messages
+
+    response = chat_manager(conversation_history)
+
+    # Add assistant response to history
+    st.session_state.messages.append({"role": "assistant", "content": response})
+
+    # Display assistant response
+    with st.chat_message("assistant"):
+        st.markdown(response)
