@@ -81,11 +81,11 @@ if prompt := st.chat_input("Ask a question about the data"):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    #Prepare the full conversation history for the API request
-    conversation_history= st.session_state.messages
+    # #Prepare the full conversation history for the API request
+    # conversation_history= st.session_state.messages
 
     # Get response from ChatGPT with assistant ID
-    response = chat_manager(conversation_history)
+    response = chat_manager(prompt)
 
     # Add assistant response to history
     st.session_state.messages.append({"role": "assistant", "content": response})
