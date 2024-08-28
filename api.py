@@ -45,30 +45,83 @@ st.markdown("Welcome to the FAF Freight Flow AI Assistant! Ask me anything.")
 
 
 # Function to call OpenAI's API with assistant ID
-def  chat_manager(prompt):
-    thread=client.beta.threads.create()
-    message = client.beta.threads.messages.create(
-        thread_id= thread.id,
-        role= "user",
-        content= prompt
-    )
+# def  chat_manager(prompt):
+#     thread=client.beta.threads.create()
+#     message = client.beta.threads.messages.create(
+#         thread_id= thread.id,
+#         role= "user",
+#         content= prompt
+#     )
+#     run = client.beta.threads.runs.create_and_poll(
+#         thread_id= thread.id,
+#         assistant_id= assistant_id,
+#         instructions="Please address the users as 'Dear User'."
+#     )
+#     messages=client.beta.threads.messages.list(thread_id=thread.id)
+#     last_message=messages.data[0]
+#     response=last_message.content[0].text.value
+#
+#     return response
+#
+#
+#
+# # Store chat history
+# if 'messages' not in st.session_state:
+#     st.session_state.messages = []
+#
+# for message in st.session_state.messages:
+#     with st.chat_message(message["role"]):
+#         st.markdown(message["content"])
+#
+# # Text input for user query
+# if prompt := st.chat_input("Ask a question about the data"):
+#     # Add user message to history
+#     st.session_state.messages.append({"role": "user", "content": prompt})
+#     #display user's input
+#     with st.chat_message("user"):
+#         st.markdown(prompt)
+#     # Get response from ChatGPT with assistant ID
+#     response = chat_manager(prompt)
+#
+#     # Add assistant response to history
+#     st.session_state.messages.append({"role": "assistant", "content": response})
+#
+#     # Display assistant response
+#     with st.chat_message("assistant"):
+#         st.markdown(response)
+
+def chat_manager(conversation_history):
+    # Create a new thread for each conversation
+    thread = client.beta.threads.create()
+
+    # Add all the messages in the conversation history to the thread
+    for message in conversation_history:
+        client.beta.threads.messages.create(
+            thread_id=thread.id,
+            role=message["role"],
+            content=message["content"]
+        )
+
+    # Generate a response from the assistant
     run = client.beta.threads.runs.create_and_poll(
-        thread_id= thread.id,
-        assistant_id= assistant_id,
+        thread_id=thread.id,
+        assistant_id=assistant_id,
         instructions="Please address the users as 'Dear User'."
     )
-    messages=client.beta.threads.messages.list(thread_id=thread.id)
-    last_message=messages.data[0]
-    response=last_message.content[0].text.value
+
+    # Retrieve the last message from the assistant's response
+    messages = client.beta.threads.messages.list(thread_id=thread.id)
+    last_message = messages.data[-1]  # Get the last message from the list
+    response = last_message.content[0].text.value
 
     return response
 
 
-
-# Store chat history
+# Initialize the chat history
 if 'messages' not in st.session_state:
     st.session_state.messages = []
 
+# Display chat history
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
@@ -77,15 +130,10 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("Ask a question about the data"):
     # Add user message to history
     st.session_state.messages.append({"role": "user", "content": prompt})
-    #display user's input
+
+    # Display user's input
     with st.chat_message("user"):
         st.markdown(prompt)
-    # Get response from ChatGPT with assistant ID
-    response = chat_manager(prompt)
 
-    # Add assistant response to history
-    st.session_state.messages.append({"role": "assistant", "content": response})
-
-    # Display assistant response
-    with st.chat_message("assistant"):
-        st.markdown(response)
+    # Prepare the full conversation history for the API request
+    conversation_history = st.session_state.messages
