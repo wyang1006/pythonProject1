@@ -111,7 +111,7 @@ def chat_manager(conversation_history):
 
     # Retrieve the last message from the assistant's response
     messages = client.beta.threads.messages.list(thread_id=thread.id)
-    last_message = messages.data[-1]  # Get the last message from the list
+    last_message = messages.data[0]  # Get the last message from the list
     response = last_message.content[0].text.value
 
     return response
