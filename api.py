@@ -29,7 +29,7 @@ embed_url="https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZG
 #     """,
 #     unsafe_allow_html=True
 # )
-st.components.v1.iframe(embed_url,width=1000, height=650)
+st.components.v1.iframe(embed_url,width=1200, height=800)
 # Set your API key
 api_key="sk-iAym-FFx6dyhI2TBUnhlki4vecSbxKLsxdzrMAnxWzT3BlbkFJH2-hop5WVvs3-X-szYFJLP1JQYdcJbSC2IJXisnLcA"  # Replace with your API key
 client=OpenAI(api_key=api_key)
