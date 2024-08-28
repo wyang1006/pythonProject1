@@ -91,11 +91,13 @@ st.markdown("Welcome to the FAF Freight Flow AI Assistant! Ask me anything.")
 #         st.markdown(response)
 
 def chat_manager(conversation_history):
+    #only refer to the last 3 messages
+    recent_history = conversation_history[-3:]
     # Create a new thread for each conversation
     thread = client.beta.threads.create()
 
     # Add all the messages in the conversation history to the thread
-    for message in conversation_history:
+    for message in recent_history:
         client.beta.threads.messages.create(
             thread_id=thread.id,
             role=message["role"],
