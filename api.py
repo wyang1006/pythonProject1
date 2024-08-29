@@ -140,7 +140,7 @@ if prompt := st.chat_input("Ask a question about the data"):
 
     #combine text and image into one history item
     if response_image:
-        image_base64 = base64.b64encode(image_bytes).decode()
+        image_base64 = base64.b64encode(response_image).decode()
         response_content = f"{response_text}\n\n![Image](data:image/png;base64,{image_base64})"
     else:
         response_content = response_text
