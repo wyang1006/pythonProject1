@@ -3,7 +3,7 @@ from openai import OpenAI
 
 
 
-st.title("FAF Disaggregated Freight Flow APP")
+st.title("FAF Freight Flow APP")
 #
 # embed_url="https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
 #
