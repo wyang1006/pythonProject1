@@ -123,6 +123,8 @@ if 'messages' not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
+        if message.get("image"):
+            st.image(message["image"])
 
 # Text input for user query
 if prompt := st.chat_input("Ask a question about the data"):
@@ -138,17 +140,23 @@ if prompt := st.chat_input("Ask a question about the data"):
 
     response_image, response_text = chat_manager(conversation_history)
 
-    #combine text and image into one history item
+    response_content = {"role": "assistant", "content": response_text}
     if response_image:
-        image_base64 = base64.b64encode(response_image).decode()
-        response_content = f"{response_text}\n\n![Image](data:image/png;base64,{image_base64})"
-    else:
-        response_content = response_text
+        response_content["image"] = response_image
+
+    #combine text and image into one history item
+    # if response_image:
+    #     image_base64 = base64.b64encode(response_image).decode()
+    #     response_content = f"{response_text}\n\n![Image](data:image/png;base64,{image_base64})"
+    # else:
+    #     response_content = response_text
 
 
     # Add combined assistant response to history
-    st.session_state.messages.append({"role": "assistant", "content": response_content})
+    st.session_state.messages.append(response_content)
 
     # Display assistant response
     with st.chat_message("assistant"):
-        st.markdown(response_content)
+        st.markdown(response_text)
+        if response_image:
+            st.image(response_image)
