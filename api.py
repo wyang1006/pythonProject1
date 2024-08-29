@@ -23,51 +23,7 @@ st.markdown("Welcome to the FAF Freight Flow AI Assistant! Ask me anything.")
 
 
 
-# Function to call OpenAI's API with assistant ID
-# def  chat_manager(prompt):
-#     thread=client.beta.threads.create()
-#     message = client.beta.threads.messages.create(
-#         thread_id= thread.id,
-#         role= "user",
-#         content= prompt
-#     )
-#     run = client.beta.threads.runs.create_and_poll(
-#         thread_id= thread.id,
-#         assistant_id= assistant_id,
-#         instructions="Please address the users as 'Dear User'."
-#     )
-#     messages=client.beta.threads.messages.list(thread_id=thread.id)
-#     last_message=messages.data[0]
-#     response=last_message.content[0].text.value
-#
-#     return response
-#
-#
-#
-# # Store chat history
-# if 'messages' not in st.session_state:
-#     st.session_state.messages = []
-#
-# for message in st.session_state.messages:
-#     with st.chat_message(message["role"]):
-#         st.markdown(message["content"])
-#
-# # Text input for user query
-# if prompt := st.chat_input("Ask a question about the data"):
-#     # Add user message to history
-#     st.session_state.messages.append({"role": "user", "content": prompt})
-#     #display user's input
-#     with st.chat_message("user"):
-#         st.markdown(prompt)
-#     # Get response from ChatGPT with assistant ID
-#     response = chat_manager(prompt)
-#
-#     # Add assistant response to history
-#     st.session_state.messages.append({"role": "assistant", "content": response})
-#
-#     # Display assistant response
-#     with st.chat_message("assistant"):
-#         st.markdown(response)
+#function to call assistant API
 
 def chat_manager(conversation_history):
     #only refer to the last 3 messages
@@ -105,7 +61,7 @@ def chat_manager(conversation_history):
             image_bytes = image_data.read()
             response_image = image_bytes
 
-            # st.image(image_bytes)
+
         else:
             response_text = m.text.value
 
@@ -144,12 +100,7 @@ if prompt := st.chat_input("Ask a question about the data"):
     if response_image:
         response_content["image"] = response_image
 
-    #combine text and image into one history item
-    # if response_image:
-    #     image_base64 = base64.b64encode(response_image).decode()
-    #     response_content = f"{response_text}\n\n![Image](data:image/png;base64,{image_base64})"
-    # else:
-    #     response_content = response_text
+
 
 
     # Add combined assistant response to history
