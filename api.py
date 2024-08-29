@@ -58,7 +58,7 @@ else:
     st.header("FAF FLOW AI-Assisted Chat")
 
     # Initial message
-    st.markdown("Welcome to the FAF Freight Flow AI Assistant! Ask me anything.")
+    st.markdown("Welcome to the FAF Freight Flow AI Assistant! Ask me anything about the data.")
 
 
     # function to call assistant API
@@ -121,7 +121,7 @@ else:
                 st.image(message["image"])
 
     # Text input for user query
-    if prompt := st.chat_input("Ask a question about the data"):
+    if prompt := st.chat_input("Start here! Ask a question about the data"):
         # Add user message to history
         st.session_state.messages.append({"role": "user", "content": prompt})
 
