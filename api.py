@@ -3,16 +3,17 @@ from openai import OpenAI
 
 
 
-st.title("FAF Freight Flow APP")
-#
-# embed_url="https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
-#
-# st.components.v1.iframe(embed_url,width=1000, height=600)
+
+
 # Set your API key
 api_key="sk-iAym-FFx6dyhI2TBUnhlki4vecSbxKLsxdzrMAnxWzT3BlbkFJH2-hop5WVvs3-X-szYFJLP1JQYdcJbSC2IJXisnLcA"  # Replace with your API key
 client=OpenAI(api_key=api_key)
 assistant_id="asst_2CNArz6z3k7YC6Y8x3QYrewi"
-
+st.set_page_config(
+    page_title="FAF Disaggregated Freight Flow APP",  # Title of the tab in the browser
+    page_icon="🚚",  # Emoji or path to an image file to use as the favicon
+    layout="wide",  # Can be "centered" or "wide"
+)
 
 # Custom CSS to adjust the layout
 st.markdown(
