@@ -33,7 +33,7 @@ st.set_page_config(
 #     """,
 #     unsafe_allow_html=True
 # )
-
+st.title("FAF Interactive Tool")
 sb=st.sidebar.title('Navigation')
 page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI-Assisted Chat"])
 if page == "Freight Flow Dashboard":
