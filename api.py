@@ -99,7 +99,7 @@ def chat_manager(conversation_history):
             image_data = client.files.content(image_file_id)
             image_bytes = image_data.read()
 
-            return st.image(image_bytes)
+            st.image(image_bytes)
         else:
             return m.text.value
     # response = last_message.content[0].text.value
