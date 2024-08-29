@@ -55,7 +55,7 @@ if page == "Freight Flow Dashboard":
     )
 
 else:
-    st.header("FAF FLOW AI-Assisted Chat")
+    st.header("FAF Freight Flow AI-Assisted Chat")
 
     # Initial message
     st.markdown("Welcome to the FAF Freight Flow AI Assistant!")
