@@ -3,11 +3,11 @@ from openai import OpenAI
 
 
 
-st.title("FAF Flow Dashboard")
-
-embed_url="https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
-
-st.components.v1.iframe(embed_url,width=1000, height=600)
+# st.title("FAF Flow Dashboard")
+#
+# embed_url="https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+#
+# st.components.v1.iframe(embed_url,width=1000, height=600)
 # Set your API key
 api_key="sk-iAym-FFx6dyhI2TBUnhlki4vecSbxKLsxdzrMAnxWzT3BlbkFJH2-hop5WVvs3-X-szYFJLP1JQYdcJbSC2IJXisnLcA"  # Replace with your API key
 client=OpenAI(api_key=api_key)
@@ -15,6 +15,11 @@ assistant_id="asst_2CNArz6z3k7YC6Y8x3QYrewi"
 
 sb=st.sidebar.title('Navigation')
 page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI-Assisted Chat"])
+if page == "Freight Flow Dashboard":
+    st.header("Disaggregated Freight Flow Dashboard")
+    embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+
+    st.components.v1.iframe(embed_url, width=1000, height=600)
 # Streamlit app title
 st.title("FAF FLOW AI-Assisted Chat")
 
