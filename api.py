@@ -43,7 +43,7 @@ sb=st.sidebar.title('Navigation')
 page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI-Assisted Chat"])
 if page == "Freight Flow Dashboard":
     st.header("Disaggregated Freight Flow Dashboard")
-    embed_url = "https://app.powerbi.com/view?r=eyJrIjoiNzdhZWZkM2QtNTZmYy00MjA0LWJmNzQtMDM2ZDIzNmZkNDVhIiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+    embed_url = "https://app.powerbi.com/view?r=eyJrIjoiMzAwYzBmNDMtMDcyOS00NDFiLWFmM2EtY2JhYTMzNDJkODFjIiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
 
     st.markdown(
         f"""
