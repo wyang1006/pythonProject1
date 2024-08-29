@@ -94,12 +94,12 @@ def chat_manager(conversation_history):
     last_message = messages.data[0]  # Get the last message from the list
     #return text or chart
     for m in last_message.content:
-        if m.type == "image.file":
+        if m.type == "image_file":
             image_file_id = m.image_file.file_id
             image_data = client.files.content(image_file_id)
             image_bytes = image_data.read()
 
-            return st.image(image_bytes)
+            st.image(image_bytes)
         else:
             return m.text.value
     # response = last_message.content[0].text.value
