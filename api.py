@@ -20,13 +20,13 @@ st.markdown(
     <style>
     /* Adjust the width of the sidebar */
     .css-1d391kg {  /* This class targets the sidebar */
-        width: 15% !important;  /* Adjust the width percentage as needed */
+        width: 10% !important;  /* Adjust the width percentage as needed */
     }
 
     /* Adjust the width of the main content */
     .css-1gkypgm {  /* This class targets the main content area */
-        max-width: 80% !important;  /* Adjust the width percentage as needed */
-        margin-left: 15%;  /* This shifts the content to fill the gap */
+        max-width: 85% !important;  /* Adjust the width percentage as needed */
+        margin-left: 10%;  /* This shifts the content to fill the gap */
     }
     </style>
     """,
