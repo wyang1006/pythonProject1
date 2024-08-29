@@ -58,10 +58,10 @@ else:
     st.header("FAF FLOW AI-Assisted Chat")
 
     # Initial message
-    st.markdown("Welcome to the FAF Freight Flow AI Assistant! The dataset contains the following columns: ")
+    st.markdown("Welcome to the FAF Freight Flow AI Assistant! /n The dataset contains the following columns: ")
     st.markdown("""
-    - Origin: All Florida counties
-    - Destination: All Florida counties
+    - Origin: all Florida counties
+    - Destination: all Florida counties
     - year: 2020 and 2050
     - Commodity: 12 commodity types
     - tonnage: numerical tons""")
