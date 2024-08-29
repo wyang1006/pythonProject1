@@ -19,7 +19,14 @@ if page == "Freight Flow Dashboard":
     st.header("Disaggregated Freight Flow Dashboard")
     embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZTA2YzkyNTItMWFjMS00OTM1LTlmZGQtODdjMmEyMWZjMTc0IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
 
-    st.components.v1.iframe(embed_url, width=1000, height=600)
+    st.markdown(
+        f"""
+        <div style="display: flex; justify-content: center;">
+            <iframe src="{embed_url}" width="1000" height="600" style="border:none;"></iframe>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 else:
     st.header("FAF FLOW AI-Assisted Chat")
