@@ -92,16 +92,23 @@ def chat_manager(conversation_history):
     # Retrieve the last message from the assistant's response
     messages = client.beta.threads.messages.list(thread_id=thread.id)
     last_message = messages.data[0]  # Get the last message from the list
+
+    response_text = ""
+    response_image = None
+
     #return text or chart
     for m in last_message.content:
         if m.type == "image_file":
             image_file_id = m.image_file.file_id
             image_data = client.files.content(image_file_id)
             image_bytes = image_data.read()
+            response_image = image_bytes
 
-            st.image(image_bytes)
+            # st.image(image_bytes)
         else:
-            return m.text.value
+            response_text = m.text.value
+
+    return response_image, response_text
     # response = last_message.content[0].text.value
     #
     # return response
@@ -128,11 +135,19 @@ if prompt := st.chat_input("Ask a question about the data"):
     # Prepare the full conversation history for the API request
     conversation_history = st.session_state.messages
 
-    response = chat_manager(conversation_history)
+    response_image, response_text = chat_manager(conversation_history)
 
-    # Add assistant response to history
-    st.session_state.messages.append({"role": "assistant", "content": response})
+    #combine text and image into one history item
+    if response_image:
+        image_base64 = base64.b64encode(image_bytes).decode()
+        response_content = f"{response_text}\n\n![Image](data:image/png;base64,{image_base64})"
+    else:
+        response_content = response_text
+
+
+    # Add combined assistant response to history
+    st.session_state.messages.append({"role": "assistant", "content": response_content})
 
     # Display assistant response
     with st.chat_message("assistant"):
-        st.markdown(response)
+        st.markdown(response_content)
