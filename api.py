@@ -13,7 +13,8 @@ api_key="sk-iAym-FFx6dyhI2TBUnhlki4vecSbxKLsxdzrMAnxWzT3BlbkFJH2-hop5WVvs3-X-szY
 client=OpenAI(api_key=api_key)
 assistant_id="asst_2CNArz6z3k7YC6Y8x3QYrewi"
 
-
+sb=st.sidebar.title('Navigation')
+page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI-Assisted Chat"])
 # Streamlit app title
 st.title("FAF FLOW AI-Assisted Chat")
 
