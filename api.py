@@ -1,6 +1,6 @@
 import streamlit as st
 from openai import OpenAI
-import base64
+
 
 
 st.title("FAF Flow Dashboard")
