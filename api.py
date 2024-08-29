@@ -16,23 +16,23 @@ st.set_page_config(
 )
 
 # Custom CSS to adjust the layout
-# st.markdown(
-#     """
-#     <style>
-#     /* Adjust the width of the sidebar */
-#     .css-1d391kg {  /* This class targets the sidebar */
-#         width: 10% !important;  /* Adjust the width percentage as needed */
-#     }
-#
-#     /* Adjust the width of the main content */
-#     .css-1gkypgm {  /* This class targets the main content area */
-#         max-width: 85% !important;  /* Adjust the width percentage as needed */
-#         margin-left: 10%;  /* This shifts the content to fill the gap */
-#     }
-#     </style>
-#     """,
-#     unsafe_allow_html=True
-# )
+st.markdown(
+    """
+    <style>
+    /* Adjust the width of the sidebar */
+    .css-1d391kg {  /* This class targets the sidebar */
+        width: 10% !important;  /* Adjust the width percentage as needed */
+    }
+
+    /* Adjust the width of the main content */
+    .css-1gkypgm {  /* This class targets the main content area */
+        max-width: 85% !important;  /* Adjust the width percentage as needed */
+        margin-left: 10%;  /* This shifts the content to fill the gap */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 sb=st.sidebar.title('Navigation')
 page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI-Assisted Chat"])
