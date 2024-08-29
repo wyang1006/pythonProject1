@@ -26,7 +26,7 @@ st.markdown(
     /* Adjust the width of the main content */
     .css-1gkypgm {  /* This class targets the main content area */
         max-width: 75% !important;  /* Adjust the width percentage as needed */
-        margin-left: 25%;  /* This shifts the content to fill the gap */
+        margin-left: 15%;  /* This shifts the content to fill the gap */
     }
     </style>
     """,
