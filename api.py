@@ -112,8 +112,7 @@ else:
 
         return response_image, response_text
         # response = last_message.content[0].text.value
-        #
-        # return response
+       
 
 
     # Initialize the chat history
