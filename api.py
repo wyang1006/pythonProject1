@@ -115,7 +115,7 @@ else:
                 file_data = client.files.content(file_id)
                 file_content = file_data.read()
                 response_file={"name":file_name,"content":file_content}
-                response_text = m.text.value.split(":")[0]
+                response_text = m.text.value.split(":")[0]+":"
 
 
 
