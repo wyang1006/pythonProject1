@@ -97,6 +97,7 @@ else:
 
         response_text = ""
         response_image = None
+        response_file = None
 
         # return text or chart
         for m in last_message.content:
@@ -156,7 +157,7 @@ else:
         # Prepare the full conversation history for the API request
         conversation_history = st.session_state.messages
 
-        response_image, response_text = chat_manager(conversation_history)
+        response_image, response_text,response_file = chat_manager(conversation_history)
 
         response_content = {"role": "assistant", "content": response_text}
         if response_image:
