@@ -106,11 +106,24 @@ else:
                 image_bytes = image_data.read()
                 response_image = image_bytes
 
+            elif m.text.annotations:
+                file_path = m.text.annotations[0].text
+                file_name = file_path.split("/")[-1]
+                file_id = m.text.annotations[0].file_path.file_id
+
+                file_data = client.files.content(file_id)
+                file_content = file_data.read()
+                response_file={"name":file_name,"content":file_content}
+                response_text = m.text.value.split(":")[0]
+
+
+
+
 
             else:
                 response_text = m.text.value
 
-        return response_image, response_text
+        return response_image, response_text, response_file
         
 
 
@@ -125,6 +138,11 @@ else:
             st.markdown(message["content"])
             if message.get("image"):
                 st.image(message["image"])
+            if message.get("file"):
+                st.download_button(label = f"Download {message['file']['name']}",
+                                   data = message['file']['content'],
+                                   file_name= message['file']['name'])
+
 
     # Text input for user query
     if prompt := st.chat_input("Start here! Ask a question about the data"):
@@ -143,6 +161,8 @@ else:
         response_content = {"role": "assistant", "content": response_text}
         if response_image:
             response_content["image"] = response_image
+        if response_file:
+            response_content["file"] = response_file
 
         # Add combined assistant response to history
         st.session_state.messages.append(response_content)
@@ -152,5 +172,10 @@ else:
             st.markdown(response_text)
             if response_image:
                 st.image(response_image)
+            if response_file:
+                st.download_button(label= f"Download {response_file['name']}",
+                                   data = response_file['content'],
+                                   file_name = response_file['name'])
+                
 
 # 
