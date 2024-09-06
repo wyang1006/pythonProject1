@@ -131,10 +131,6 @@ else:
                 response_file={"name":file_name,"content":file_content}
                 response_text = m.text.value.split(":")[0]
 
-
-
-
-
             else:
                 response_text = m.text.value
 
