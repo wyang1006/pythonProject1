@@ -45,28 +45,7 @@ custom_css = """
 # Inject the custom CSS
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Define custom CSS to change the sidebar color
-sidebar_style = """
-    <style>
-    /* Change the background color of the sidebar */
-    .css-1d391kg {
-        background-color: #065ea0; /* Medium Blue */
-    }
 
-    /* Change the text color of the sidebar */
-    .css-1d391kg, .css-1d391kg h1, .css-1d391kg h2, .css-1d391kg p, .css-1d391kg label {
-        color: white; /* Change text color */
-    }
-
-    /* Customize the sidebar title and selectbox */
-    .css-1d391kg .stSelectbox {
-        color: black; /* Example: black for selectbox text */
-    }
-    </style>
-"""
-
-# Inject the custom CSS for sidebar
-st.markdown(sidebar_style, unsafe_allow_html=True)
 st.markdown(
     """
     <h1 style="text-align: center;">FAF Interactive Tool</h1>
