@@ -49,7 +49,7 @@ if page == "Freight Flow Dashboard":
     st.markdown(
         f"""
         <div style="display: flex; justify-content: center;">
-            <iframe src="{embed_url}" width="1050" height="703" style="border:none;"></iframe>
+            <iframe src="{embed_url}" width="1000" height="667" style="border:none;"></iframe>
         </div>
         """,
         unsafe_allow_html=True
