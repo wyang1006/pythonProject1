@@ -14,6 +14,8 @@ st.set_page_config(
     page_icon="🚚",  # Emoji or path to an image file to use as the favicon
     layout="wide",  # Can be "centered" or "wide"
 )
+
+#change font to "Muli",sans-serif
 custom_css = """
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
