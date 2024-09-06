@@ -72,7 +72,7 @@ else:
     st.header("FAF Freight Flow AI-Assisted Chat")
 
     # Initial message
-    st.markdown("Welcome to the FAF Freight Flow AI Assistant! /nYou can ask AI assistant to 1) perform a data analysis, 2) generate a chart, or 3) create a download file for your specific requirements.")
+    st.markdown("Welcome to the FAF Freight Flow AI Assistant! \nYou can ask AI assistant to 1) perform a data analysis, 2) generate a chart, or 3) create a download file for your specific requirements.")
     st.markdown("The dataset contains the following columns:")
     st.markdown("""
     - 'Origin': all Florida counties
