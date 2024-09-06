@@ -18,7 +18,23 @@ custom_css = """
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
 
-    html, body, [class*="css"]  {
+    /* Apply 'Muli' font to the entire app */
+    html, body, [class*="css"] {
+        font-family: 'Muli', sans-serif;
+    }
+
+    /* Apply font to all headers (h1, h2, h3, etc.) */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Muli', sans-serif;
+    }
+
+    /* Apply font to all markdown content */
+    .stMarkdown p {
+        font-family: 'Muli', sans-serif;
+    }
+
+    /* Apply font to sidebar elements */
+    .css-1d391kg {  /* Targets the sidebar container */
         font-family: 'Muli', sans-serif;
     }
     </style>
