@@ -44,12 +44,12 @@ page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI-Assis
 if page == "Freight Flow Dashboard":
     st.header("Disaggregated Freight Flow Dashboard")
     embed_url = "https://app.powerbi.com/view?r=eyJrIjoiMmMzMjQxOTktOTMzNC00ZTE5LWE2ZDctZTkxMjcyMzI1NGVkIiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
-    fit_to_page_url = f"{embed_url}&rs:embed=true&$filter=fitToWidth"
+    # fit_to_page_url = f"{embed_url}&rs:embed=true&$filter=fitToWidth"
 
     st.markdown(
         f"""
         <div style="display: flex; justify-content: center;">
-            <iframe src="{fit_to_page_url}" width="1000" height="600" style="border:none;"></iframe>
+            <iframe src="{embed_url}" width="1000" height="600" style="border:none;"></iframe>
         </div>
         """,
         unsafe_allow_html=True
