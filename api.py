@@ -14,25 +14,19 @@ st.set_page_config(
     page_icon="🚚",  # Emoji or path to an image file to use as the favicon
     layout="wide",  # Can be "centered" or "wide"
 )
+custom_css = """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
 
-# Custom CSS to adjust the layout
-# st.markdown(
-#     """
-#     <style>
-#     /* Adjust the width of the sidebar */
-#     .css-1d391kg {  /* This class targets the sidebar */
-#         width: 10% !important;  /* Adjust the width percentage as needed */
-#     }
-#
-#     /* Adjust the width of the main content */
-#     .css-1gkypgm {  /* This class targets the main content area */
-#         max-width: 85% !important;  /* Adjust the width percentage as needed */
-#         margin-left: 10%;  /* This shifts the content to fill the gap */
-#     }
-#     </style>
-#     """,
-#     unsafe_allow_html=True
-# )
+    html, body, [class*="css"]  {
+        font-family: 'Muli', sans-serif;
+    }
+    </style>
+"""
+
+# Inject the custom CSS
+st.markdown(custom_css, unsafe_allow_html=True)
+
 st.markdown(
     """
     <h1 style="text-align: center;">FAF Interactive Tool</h1>
@@ -44,7 +38,7 @@ page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI-Assis
 if page == "Freight Flow Dashboard":
     st.header("Disaggregated Freight Flow Dashboard")
     embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZTQ4MWEyMzQtZmY2ZC00ZWUzLThmNzItN2JjMmUzNTU4YzAyIiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
-    # fit_to_page_url = f"{embed_url}&rs:embed=true&$filter=fitToWidth"
+
 
     st.markdown(
         f"""
