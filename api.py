@@ -53,7 +53,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 sb=st.sidebar.title('Navigation')
-page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI-Assisted Chat"])
+page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI Data Analyst"])
 if page == "Freight Flow Dashboard":
     st.header("Disaggregated Freight Flow Dashboard")
     embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZTQ4MWEyMzQtZmY2ZC00ZWUzLThmNzItN2JjMmUzNTU4YzAyIiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
@@ -69,10 +69,10 @@ if page == "Freight Flow Dashboard":
     )
 
 else:
-    st.header("FAF Freight Flow AI-Assisted Chat")
+    st.header("FAF Freight Flow AI Data Analyst")
 
     # Initial message
-    st.markdown("Welcome to the FAF Freight Flow AI Assistant! You can ask AI assistant to 1) perform a data analysis, 2) generate a chart, or 3) create a download file for your specific requirements.")
+    st.markdown("Welcome to the FAF Freight Flow AI Data Analyst! You can ask AI Data Analyst to 1) perform a data analysis, 2) generate a chart, or 3) create a download file for your specific requirements.")
     st.markdown("The dataset contains the following columns:")
     st.markdown("""
     - 'Origin': all Florida counties
