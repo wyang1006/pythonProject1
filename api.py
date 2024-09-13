@@ -78,7 +78,7 @@ else:
     - 'Origin': all Florida counties
     - 'Destination': all Florida counties
     - 'Year': 2020 and 2050
-    - 'Commodity': 12 commodity types
+    - 'Commodity': 12 commodity types (Nondurable Manufacturing, Paper, Chemicals, Other Durable Manufacturing, Lumber, Waste, Food, Petroleum, Agricultural Products, Clay and Stone, Miscellaneous Freight Warehousing, Minerals)
     - 'Tonnage': numerical tons""")
 
 
