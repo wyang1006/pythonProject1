@@ -102,7 +102,7 @@ else:
         run = client.beta.threads.runs.create_and_poll(
             thread_id=thread.id,
             assistant_id=assistant_id,
-            instructions="Please address the users as 'Dear User'."
+            instructions="When performing data analysis, please refer only to the uploaded file."
         )
 
         # Retrieve the last message from the assistant's response
