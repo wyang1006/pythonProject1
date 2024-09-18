@@ -85,8 +85,8 @@ else:
     # function to call assistant API
 
     def chat_manager(conversation_history):
-        # only refer to the last 4 messages
-        recent_history = conversation_history[-4:]
+        # only refer to the last 5 messages
+        recent_history = conversation_history[-5:]
         # Create a new thread for each conversation
         thread = client.beta.threads.create()
 
