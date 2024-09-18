@@ -102,7 +102,7 @@ else:
         run = client.beta.threads.runs.create_and_poll(
             thread_id=thread.id,
             assistant_id=assistant_id,
-            instructions="When performing data analysis and answering questions, please refer only to the uploaded file:FAF_Flow.csv. When users mention commodity or commodity types, limit references to the 12 commodity types listed in the uploaded file. All information should pertain to two separate years: 2020 and 2050. If a county name is mentioned without specifying the year or whether it is the origin or destination, please ask the user to clarify the year and whether it pertains to the origin or destination.When users mention year 2020 or 2050, only refer to data from the uploaed file pertaining to the specified year"
+            instructions="When performing data analysis and answering questions, please refer only to the uploaded file:FAF_Flow.csv. When users mention commodity or commodity types, limit references to the 12 commodity types listed in the uploaded file. All information should pertain to two separate years: 2020 and 2050. If a county name is mentioned without specifying the year or whether it is the origin or destination, please ask the user to clarify the year and whether it pertains to the origin or destination.When users mention year 2020 or 2050, refer only to data from the uploaed file pertaining to the specified year"
         )
 
         # Retrieve the last message from the assistant's response
