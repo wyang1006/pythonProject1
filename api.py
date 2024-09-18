@@ -102,7 +102,7 @@ else:
         run = client.beta.threads.runs.create_and_poll(
             thread_id=thread.id,
             assistant_id=assistant_id,
-            instructions="When performing data analysis and answering questions, please refer only to the uploaded file.All information comes from two seperate years : 2020 and 2050"
+            instructions="When performing data analysis and answering questions, please refer only to the uploaded file.All information comes from two seperate years : 2020 and 2050. If a county name is mentioned without being specified as origin or destination, please ask users to specify it as a origin or a destination"
         )
 
         # Retrieve the last message from the assistant's response
