@@ -52,7 +52,16 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.markdown ("FAF data includes commodity flows (in tonnage) between origin and destination zones by commodity type for trucks. Compared to the latest FAF5 data, this tool provides estimates of disaggregated freight flows by commodity for all counties in Florida.")
+st.markdown(
+    """
+    <div style="text-align: center;">
+    FAF data includes commodity flows (in tonnage) between origin and destination zones by commodity type for trucks. 
+    Compared to the latest FAF5 data, this tool provides estimates of disaggregated freight flows by commodity for all counties in Florida.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 st.header("Disaggregated Freight Flow Dashboard")
 embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
 
