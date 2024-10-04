@@ -56,7 +56,7 @@ sb=st.sidebar.title('Navigation')
 page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI Data Analyst"])
 if page == "Freight Flow Dashboard":
     st.header("Disaggregated Freight Flow Dashboard")
-    embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZTQ4MWEyMzQtZmY2ZC00ZWUzLThmNzItN2JjMmUzNTU4YzAyIiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+    embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
 
 
     st.markdown(
