@@ -10,7 +10,7 @@ api_key="sk-iAym-FFx6dyhI2TBUnhlki4vecSbxKLsxdzrMAnxWzT3BlbkFJH2-hop5WVvs3-X-szY
 client=OpenAI(api_key=api_key)
 assistant_id="asst_2CNArz6z3k7YC6Y8x3QYrewi"
 st.set_page_config(
-    page_title="FAF(Freight Analysis Framework Disaggregated Freight Flow APP",  # Title of the tab in the browser
+    page_title="FAF(Freight Analysis Framework) Disaggregated Freight Flow APP",  # Title of the tab in the browser
     page_icon="🚚",  # Emoji or path to an image file to use as the favicon
     layout="wide",  # Can be "centered" or "wide"
 )
@@ -52,6 +52,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.markdown ("FAF data includes commodity flows (in tonnage) between origin and destination zones by commodity type for trucks. Compared to the latest FAF5 data, this tool provides estimates of disaggregated freight flows by commodity for all counties in Florida.")
 sb=st.sidebar.title('Navigation')
 page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI Data Analyst"])
 if page == "Freight Flow Dashboard":
