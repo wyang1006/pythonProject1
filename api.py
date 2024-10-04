@@ -48,7 +48,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 st.markdown(
     """
-    <h1 style="text-align: center;">Freight Analysis Framework (FAF) Interactive Tool</h1>
+    <h1 style="text-align: center;">Freight Analysis Framework (FAF) Interactive Data Tool</h1>
     """,
     unsafe_allow_html=True
 )
