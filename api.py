@@ -10,7 +10,7 @@ api_key="sk-iAym-FFx6dyhI2TBUnhlki4vecSbxKLsxdzrMAnxWzT3BlbkFJH2-hop5WVvs3-X-szY
 client=OpenAI(api_key=api_key)
 assistant_id="asst_2CNArz6z3k7YC6Y8x3QYrewi"
 st.set_page_config(
-    page_title="FAF Disaggregated Freight Flow APP",  # Title of the tab in the browser
+    page_title="FAF(Freight Analysis Framework Disaggregated Freight Flow APP",  # Title of the tab in the browser
     page_icon="🚚",  # Emoji or path to an image file to use as the favicon
     layout="wide",  # Can be "centered" or "wide"
 )
