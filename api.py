@@ -72,7 +72,7 @@ if page == "User Guide":
         pdf_data = pdf_file.read()
 
     # Show the PDF in the Streamlit app using the st_pdf_viewer component
-    pdf_viewer(pdf_data)
+    pdf_viewer(pdf_data,width = 800,pages_vertical_spacing=0)
 # pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
 # with open(pdf_file_path, "rb") as pdf_file:
 #     pdf_data = pdf_file.read()
