@@ -54,11 +54,9 @@ st.markdown(
 )
 pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
 # Embed the PDF file in an iframe
-with open(pdf_file_path, "rb") as pdf_file:
-    st.download_button(label="Download PDF", data=pdf_file, file_name="FAF Interactive Tool User Guide.pdf", mime="application/pdf")
+pdf_display = f'<iframe src="file://{pdf_file_path}" width="700" height="1000" type="application/pdf"></iframe>'
+st.components.v1.html(pdf_display, height=1000)
 
-    # To display the PDF content directly
-    st.pdf(pdf_file)
 st.markdown(
     """
     <div style="text-align: center;">
