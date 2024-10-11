@@ -1,6 +1,6 @@
 import streamlit as st
 from openai import OpenAI
-import base64
+from streamlit_pdf_viewer import st_pdf_viewer
 
 
 
@@ -54,12 +54,11 @@ st.markdown(
     unsafe_allow_html=True
 )
 pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
-with open(pdf_file_path, "rb") as f:
-    base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+with open(pdf_file_path, "rb") as pdf_file:
+    pdf_data = pdf_file.read()
 
-pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
-
-st.components.v1.html(pdf_display, height=1000)
+# Show the PDF in the Streamlit app using the st_pdf_viewer component
+st_pdf_viewer(pdf_data)
 
 st.markdown(
     """
