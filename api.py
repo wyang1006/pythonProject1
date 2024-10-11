@@ -52,6 +52,10 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
+# Embed the PDF file in an iframe
+pdf_display = f'<iframe src="file://{pdf_file_path}" width="700" height="1000" type="application/pdf"></iframe>'
+st.components.v1.html(pdf_display, height=1000)
 st.markdown(
     """
     <div style="text-align: center;">
