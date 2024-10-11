@@ -58,7 +58,7 @@ with open(pdf_file_path, "rb") as pdf_file:
     pdf_data = pdf_file.read()
 
 # Show the PDF in the Streamlit app using the st_pdf_viewer component
-st_pdf_viewer(pdf_data)
+    st_pdf_viewer(pdf_data)
 
 st.markdown(
     """
