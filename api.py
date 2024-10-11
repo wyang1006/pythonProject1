@@ -53,9 +53,12 @@ st.markdown(
     unsafe_allow_html=True
 )
 pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
-# Embed the PDF file in an iframe
-pdf_display = f'<iframe src="file://{pdf_file_path}" width="700" height="1000" type="application/pdf"></iframe>'
-st.components.v1.html(pdf_display, height=1000)
+with open(pdf_file_path, "rb") as pdf_file:
+    st.download_button(label="Download PDF", data=pdf_file, file_name="FAF_Interactive_Tool_User_Guide.pdf",
+                       mime="application/pdf")
+
+    # Display the PDF directly in the app
+    st.pdf(pdf_file)
 
 st.markdown(
     """
