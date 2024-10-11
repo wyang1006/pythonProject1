@@ -67,7 +67,7 @@ sb = st.sidebar.title('Navigation')
 page = st.sidebar.selectbox("Choose a Section",["User Guide","Disaggregated Freigth Flow Dashboard"])
 
 if page == "User Guide":
-    pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
+    pdf_file_path = "User Guide/FAF Interactive Tool User Guide_v1.pdf"
     with open(pdf_file_path, "rb") as pdf_file:
         pdf_data = pdf_file.read()
 
