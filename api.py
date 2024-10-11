@@ -53,13 +53,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
-with open(pdf_file_path, "rb") as pdf_file:
-    pdf_data = pdf_file.read()
-
-# Show the PDF in the Streamlit app using the st_pdf_viewer component
-pdf_viewer(pdf_data)
-
 st.markdown(
     """
     <div style="text-align: center;">
@@ -69,19 +62,59 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+#sidebar
+sb = st.sidebar.title('Navigation')
+page = st.sidebar.selectbox("Choose a Section",["Users' Guide","Disaggregated Freigth Flow Dashboard"])
 
-st.header("Disaggregated Freight Flow Dashboard")
-embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+if page == "Users' Guide":
+    pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
+    with open(pdf_file_path, "rb") as pdf_file:
+        pdf_data = pdf_file.read()
 
+    # Show the PDF in the Streamlit app using the st_pdf_viewer component
+    pdf_viewer(pdf_data)
+# pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
+# with open(pdf_file_path, "rb") as pdf_file:
+#     pdf_data = pdf_file.read()
+#
+# # Show the PDF in the Streamlit app using the st_pdf_viewer component
+# pdf_viewer(pdf_data)
+else:
+    st.header("Disaggregated Freight Flow Dashboard")
+    embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
 
-st.markdown(
+    st.markdown(
         f"""
-        <div style="display: flex; justify-content: center;">
-            <iframe src="{embed_url}" width="1200" height="804" style="border:none;"></iframe>
-        </div>
-        """,
+            <div style="display: flex; justify-content: center;">
+                <iframe src="{embed_url}" width="1200" height="804" style="border:none;"></iframe>
+            </div>
+            """,
         unsafe_allow_html=True
     )
+
+
+# st.markdown(
+#     """
+#     <div style="text-align: center;">
+#     FAF data includes commodity flows (in tonnage) between origin and destination zones by commodity type for trucks.
+#     Compared to the latest FAF5 data, this tool provides estimates of disaggregated freight flows by commodity for all counties in Florida.
+#     </div>
+#     """,
+#     unsafe_allow_html=True
+# )
+#
+# st.header("Disaggregated Freight Flow Dashboard")
+# embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+#
+#
+# st.markdown(
+#         f"""
+#         <div style="display: flex; justify-content: center;">
+#             <iframe src="{embed_url}" width="1200" height="804" style="border:none;"></iframe>
+#         </div>
+#         """,
+#         unsafe_allow_html=True
+#     )
 
 #sb=st.sidebar.title('Navigation')
 #page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI Data Analyst"])
