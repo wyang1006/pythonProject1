@@ -66,13 +66,13 @@ st.markdown(
 sb = st.sidebar.title('Navigation')
 page = st.sidebar.selectbox("Choose a Section",["Users' Guide","Disaggregated Freigth Flow Dashboard"])
 
-if page == "Users' Guide":
-    pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
-    with open(pdf_file_path, "rb") as pdf_file:
-        pdf_data = pdf_file.read()
-
-    # Show the PDF in the Streamlit app using the st_pdf_viewer component
-    pdf_viewer(pdf_data)
+# if page == "Users' Guide":
+#     pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
+#     with open(pdf_file_path, "rb") as pdf_file:
+#         pdf_data = pdf_file.read()
+#
+#     # Show the PDF in the Streamlit app using the st_pdf_viewer component
+#     pdf_viewer(pdf_data)
 # pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
 # with open(pdf_file_path, "rb") as pdf_file:
 #     pdf_data = pdf_file.read()
