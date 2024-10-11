@@ -53,12 +53,12 @@ st.markdown(
     unsafe_allow_html=True
 )
 pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
-with open(pdf_file_path, "rb") as pdf_file:
-    st.download_button(label="Download PDF", data=pdf_file, file_name="FAF_Interactive_Tool_User_Guide.pdf",
-                       mime="application/pdf")
+with open(pdf_file_path, "rb") as f:
+    base64_pdf = base64.b64encode(f.read()).decode('utf-8')
 
-    # Display the PDF directly in the app
-    st.pdf(pdf_file)
+pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+
+st.components.v1.html(pdf_display, height=1000)
 
 st.markdown(
     """
