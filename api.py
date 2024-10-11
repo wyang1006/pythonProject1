@@ -79,18 +79,18 @@ page = st.sidebar.selectbox("Choose a Section",["Users' Guide","Disaggregated Fr
 #
 # # Show the PDF in the Streamlit app using the st_pdf_viewer component
 # pdf_viewer(pdf_data)
-else:
-    st.header("Disaggregated Freight Flow Dashboard")
-    embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
-
-    st.markdown(
-        f"""
-            <div style="display: flex; justify-content: center;">
-                <iframe src="{embed_url}" width="1200" height="804" style="border:none;"></iframe>
-            </div>
-            """,
-        unsafe_allow_html=True
-    )
+# else:
+#     st.header("Disaggregated Freight Flow Dashboard")
+#     embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+#
+#     st.markdown(
+#         f"""
+#             <div style="display: flex; justify-content: center;">
+#                 <iframe src="{embed_url}" width="1200" height="804" style="border:none;"></iframe>
+#             </div>
+#             """,
+#         unsafe_allow_html=True
+#     )
 
 
 # st.markdown(
