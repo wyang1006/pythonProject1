@@ -64,7 +64,7 @@ st.markdown(
 )
 #sidebar
 sb = st.sidebar.title('Navigation')
-page = st.sidebar.selectbox("Choose a Section",["User Guide","Disaggregated Freigth Flow Dashboard"])
+page = st.sidebar.selectbox("Choose a Section",["Disaggregated Freigth Flow Dashboard","User Guide"])
 
 
 # pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
