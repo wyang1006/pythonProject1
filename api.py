@@ -66,20 +66,14 @@ st.markdown(
 sb = st.sidebar.title('Navigation')
 page = st.sidebar.selectbox("Choose a Section",["User Guide","Disaggregated Freigth Flow Dashboard"])
 
-if page == "User Guide":
-    pdf_file_path = "User Guide/FAF Interactive Tool User Guide_v1.pdf"
-    with open(pdf_file_path, "rb") as pdf_file:
-        pdf_data = pdf_file.read()
 
-    # Show the PDF in the Streamlit app using the st_pdf_viewer component
-    pdf_viewer(pdf_data,width = 1300,pages_vertical_spacing = 0)
 # pdf_file_path = "User Guide/FAF Interactive Tool User Guide.pdf"
 # with open(pdf_file_path, "rb") as pdf_file:
 #     pdf_data = pdf_file.read()
 #
 # # Show the PDF in the Streamlit app using the st_pdf_viewer component
 # pdf_viewer(pdf_data)
-else:
+if page == "Disaggregated Freigth Flow Dashboard":
     st.header("Disaggregated Freight Flow Dashboard")
     embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
 
@@ -91,6 +85,13 @@ else:
             """,
         unsafe_allow_html=True
     )
+else:
+    pdf_file_path = "User Guide/FAF Interactive Tool User Guide_v1.pdf"
+    with open(pdf_file_path, "rb") as pdf_file:
+        pdf_data = pdf_file.read()
+
+    # Show the PDF in the Streamlit app using the st_pdf_viewer component
+    pdf_viewer(pdf_data, width=1300, pages_vertical_spacing=0)
 
 
 # st.markdown(
