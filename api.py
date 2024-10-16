@@ -57,7 +57,7 @@ st.markdown(
     """
     <div style="text-align: center;">
     FAF data includes commodity flows (in tonnage) between origin and destination zones by commodity type for trucks. 
-    Compared to the latest FAF5 data, this tool provides estimates of disaggregated freight flows by commodity for all counties in Florida.
+    Compared to the latest FAF5 data, this tool provides estimates of disaggregated freight flows within all counties in Florida.
     </div>
     """,
     unsafe_allow_html=True
