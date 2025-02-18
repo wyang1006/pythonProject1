@@ -18,4 +18,4 @@ RUN pip show streamlit || pip install streamlit
 EXPOSE 8501
 
 # Run the Streamlit application
-CMD ["python", "-m", "streamlit", "run", "api.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["python3", "-m", "streamlit", "run", "api.py", "--server.port=8501", "--server.address=0.0.0.0"]
