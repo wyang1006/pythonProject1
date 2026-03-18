@@ -73,27 +73,27 @@ page = st.sidebar.selectbox("Choose a Section",["Disaggregated Freigth Flow Dash
 #
 # # Show the PDF in the Streamlit app using the st_pdf_viewer component
 # pdf_viewer(pdf_data)
-if page == "Disaggregated Freigth Flow Dashboard":
-    st.header("Disaggregated Freight Flow Dashboard")
-    embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
-
-    st.markdown(
-        f"""
-            <div style="display: flex; justify-content: center;">
-                <iframe src="{embed_url}" width="1300" height="850" style="border:none;"></iframe>
-            </div>
-            """,
-        unsafe_allow_html=True
-    )
-else:
-    pdf_file_path = "User Guide/FAF Interactive Tool User Guide_v1.pdf"
-    with open(pdf_file_path, "rb") as pdf_file:
-        pdf_data = pdf_file.read()
-
-    # Show the PDF in the Streamlit app using the st_pdf_viewer component
-    pdf_viewer(pdf_data, width=1300, pages_vertical_spacing=0)
-
-
+# if page == "Disaggregated Freigth Flow Dashboard":
+#     st.header("Disaggregated Freight Flow Dashboard")
+#     embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+#
+#     st.markdown(
+#         f"""
+#             <div style="display: flex; justify-content: center;">
+#                 <iframe src="{embed_url}" width="1300" height="850" style="border:none;"></iframe>
+#             </div>
+#             """,
+#         unsafe_allow_html=True
+#     )
+# else:
+#     pdf_file_path = "User Guide/FAF Interactive Tool User Guide_v1.pdf"
+#     with open(pdf_file_path, "rb") as pdf_file:
+#         pdf_data = pdf_file.read()
+#
+#     # Show the PDF in the Streamlit app using the st_pdf_viewer component
+#     pdf_viewer(pdf_data, width=1300, pages_vertical_spacing=0)
+#
+#
 st.markdown(
     """
     <div style="text-align: center;">
@@ -104,47 +104,47 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# st.header("Disaggregated Freight Flow Dashboard")
-# embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
-#
-#
-# st.markdown(
-#         f"""
-#         <div style="display: flex; justify-content: center;">
-#             <iframe src="{embed_url}" width="1200" height="804" style="border:none;"></iframe>
-#         </div>
-#         """,
-#         unsafe_allow_html=True
-#     )
-#
-# sb=st.sidebar.title('Navigation')
-# page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI Data Analyst"])
-# if page == "Freight Flow Dashboard":
-#     st.header("Disaggregated Freight Flow Dashboard")
-#     embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
-#
-#
-#     st.markdown(
-#         f"""
-#         <div style="display: flex; justify-content: center;">
-#             <iframe src="{embed_url}" width="1200" height="804" style="border:none;"></iframe>
-#         </div>
-#         """,
-#         unsafe_allow_html=True
-#     )
-#
-# else:
-#     st.header("FAF Freight Flow AI Data Analyst")
-#
-#     # Initial message
-#     st.markdown("Welcome to the FAF Freight Flow AI Data Analyst! You can ask AI Data Analyst to 1) perform a data analysis, 2) generate a chart, or 3) create a download file for your specific requirements.")
-#     st.markdown("The dataset contains the following columns:")
-#     st.markdown("""
-#     - 'Origin': all Florida counties
-#     - 'Destination': all Florida counties
-#     - 'Year': 2020 and 2050
-#     - 'Commodity': 12 commodity types (Nondurable Manufacturing, Paper, Chemicals, Other Durable Manufacturing, Lumber, Waste, Food, Petroleum, Agricultural Products, Clay and Stone, Miscellaneous Freight Warehousing, Minerals)
-#     - 'Tonnage': numerical tons""")
+st.header("Disaggregated Freight Flow Dashboard")
+embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+
+
+st.markdown(
+        f"""
+        <div style="display: flex; justify-content: center;">
+            <iframe src="{embed_url}" width="1200" height="804" style="border:none;"></iframe>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+sb=st.sidebar.title('Navigation')
+page=st.sidebar.selectbox("Choose A Section",["Freight Flow Dashboard","AI Data Analyst"])
+if page == "Freight Flow Dashboard":
+    st.header("Disaggregated Freight Flow Dashboard")
+    embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZDE3MTA1MTQtZjVmYy00ZjkxLWFkZjctMGU5YTZhOWFlMzU5IiwidCI6ImYyODEwNzRiLTc1MGQtNGM1Zi1iZDQ0LWYzYjg0OTk5NDk3NiIsImMiOjJ9"
+
+
+    st.markdown(
+        f"""
+        <div style="display: flex; justify-content: center;">
+            <iframe src="{embed_url}" width="1200" height="804" style="border:none;"></iframe>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+else:
+    st.header("FAF Freight Flow AI Data Analyst")
+
+    # Initial message
+    st.markdown("Welcome to the FAF Freight Flow AI Data Analyst! You can ask AI Data Analyst to 1) perform a data analysis, 2) generate a chart, or 3) create a download file for your specific requirements.")
+    st.markdown("The dataset contains the following columns:")
+    st.markdown("""
+    - 'Origin': all Florida counties
+    - 'Destination': all Florida counties
+    - 'Year': 2020 and 2050
+    - 'Commodity': 12 commodity types (Nondurable Manufacturing, Paper, Chemicals, Other Durable Manufacturing, Lumber, Waste, Food, Petroleum, Agricultural Products, Clay and Stone, Miscellaneous Freight Warehousing, Minerals)
+    - 'Tonnage': numerical tons""")
 
 
     # function to call assistant API
