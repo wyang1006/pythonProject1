@@ -178,7 +178,7 @@ else:
         response_image = None
         response_file = None
 
-        # return text or chart
+        return text or chart
         for m in last_message.content:
             if m.type == "image_file":
                 image_file_id = m.image_file.file_id
